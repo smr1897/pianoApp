@@ -1,8 +1,18 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() => runApp(PianoApp());
 
 class PianoApp extends StatelessWidget{
+  static AudioPlayer player = new AudioPlayer();
+
+  void playAudio({required String filename})
+  {
+    player.play(filename as Source);
+  }
+
   @override
   Widget build(BuildContext context){
     return MaterialApp(
@@ -13,30 +23,54 @@ class PianoApp extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             PianoButton(
-              onKeyPress: () {},
+              onKeyPress: () {
+                playAudio(filename: 'piano_notes/key12.wav');
+              },
             ),
             PianoButtonWithSuperKey(
-              onMainKeyPress: () {},
-              onSuperKeyPress: () {},
+              onMainKeyPress: () {
+                playAudio(filename: 'piano_notes/key10.wav');
+              },
+              onSuperKeyPress: () {
+                playAudio(filename: 'piano_notes/key11.wav');
+              },
             ),
             PianoButtonWithSuperKey(
-              onMainKeyPress: () {},
-              onSuperKeyPress: () {},
+              onMainKeyPress: () {
+                playAudio(filename: 'piano_notes/key08.wav');
+              },
+              onSuperKeyPress: () {
+                playAudio(filename: 'piano_notes/key09.wav');
+              },
             ),
             PianoButtonWithSuperKey(
-              onMainKeyPress: () {},
-              onSuperKeyPress: () {},
+              onMainKeyPress: () {
+                playAudio(filename: 'piano_notes/key06.wav');
+              },
+              onSuperKeyPress: () {
+                playAudio(filename: 'piano_notes/key07.wav');
+              },
             ),
             PianoButton(
-              onKeyPress: () {},
+              onKeyPress: () {
+                playAudio(filename: 'piano_notes/key05.wav');
+              },
             ),
             PianoButtonWithSuperKey(
-              onMainKeyPress: () {},
-              onSuperKeyPress: () {},
+              onMainKeyPress: () {
+                playAudio(filename: 'piano_notes/key03.wav');
+              },
+              onSuperKeyPress: () {
+                playAudio(filename: 'piano_notes/key04.wav');
+              },
             ),
             PianoButtonWithSuperKey(
-              onMainKeyPress: () {},
-              onSuperKeyPress: () {},
+              onMainKeyPress: () {
+                playAudio(filename: 'piano_notes/key01.wav');
+              },
+              onSuperKeyPress: () {
+                playAudio(filename: 'piano_notes/key02.wav');
+              },
             ),
           ],
         )
