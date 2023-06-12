@@ -24,7 +24,7 @@ class PianoApp extends StatelessWidget{
           children: <Widget>[
             PianoButton(
               onKeyPress: () {
-                playAudio(filename: 'piano_notes/key12.wav');
+                playAudio(filename: 'piano_notes/key11.wav');
               },
             ),
             PianoButtonWithSuperKey(
